@@ -1,0 +1,34 @@
+/* semantic color variables for this project */
+:root {
+  --color-primary: #189B5C;   /* Shamrock green */
+  --color-secondary: #0F0F0F; /* Night */
+
+  --text-color-dark: #1A191D; /* Raisin black */
+  --text-color-light: #fff;   /* White */
+  
+  /* Based on Figma, I'm using the formula ([font size in px] / 1440px) * 100 for setting the base font sizes. */
+  --text-size-s: clamp(0.75rem, 0.97vw, 0.875rem);  /* 14px = 0.97vw for 1440px screen */
+  --text-size-m: clamp(0.875rem, 1.11vw, 1rem);     /* 16px = 1.11vw for 1440px screen */
+  --text-size-l: clamp(1rem, 1.25vw, 1.125rem);     /* 18px = 1.25vw for 1440px screen */
+  --text-size-xl: clamp(1.75rem, 2.77vw, 2.5rem);   /* 40px = 2.77vw for 1440px screen */
+  --text-size-xxl: clamp(2rem, 4.44vw, 4rem);       /* 64px = 4.44vw for 1440px screen */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  transition: color 0.5s, background-color 0.5s;
+  line-height: 1.6;
+  font-family: "Manrope", sans-serif;
+  font-size: var(--text-size-m);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
