@@ -30,7 +30,7 @@ defineProps({
 .images-wrapper div {
   width: 50%;
   height: 50%;
-  background-color: var(--background-color-base);
+  background-color: var(--background-color-dark);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;

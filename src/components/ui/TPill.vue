@@ -39,6 +39,7 @@ span {
   color: v-bind(textColor);
   border-radius: 1.188rem;
   font-size: var(--text-size-s);
+  font-weight: 700;
 }
 
 .top-left {

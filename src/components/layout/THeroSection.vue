@@ -31,8 +31,11 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 40rem;
+  height: 40rem;
   background-color: #444f3c;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
 }
 
 .hero-content {
@@ -46,7 +49,7 @@ section {
 h1 {
   font-size: var(--text-size-xxl);
   color: var(--text-color-light);
-  font-weight: bold;
+  font-weight: 700;
   letter-spacing: 1px;
 }
 

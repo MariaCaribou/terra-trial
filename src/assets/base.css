@@ -6,7 +6,7 @@
   --text-color-dark: #1A191D;       /* Raisin black */
   --text-color-light: #fff;         /* White */
 
-  --background-color-base: #F7F8F4; /* Baby powder */
+  --background-color-dark: #F7F8F4; /* Baby powder */
   --background-color-light: #fff;   /* White */
   
   /* Based on Figma, I'm using the formula ([font size in px] / 1440px) * 100 for setting the base font sizes. */
@@ -31,7 +31,7 @@ body {
   font-family: "Manrope", sans-serif;
   font-size: var(--text-size-m);
   color: var(--text-color-dark);
-  background-color: var(--background-color-base);
+  background-color: var(--background-color-light);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

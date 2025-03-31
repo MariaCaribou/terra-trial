@@ -1,45 +1,43 @@
 <script setup>
 defineProps({
-  menuItems: {
+  logoUrl: {
+    type: String,
+  },
+  navLinks: {
     type: Array,
-  }
+  },
 })
 </script>
 
 <template>
   <header>
-    <div class="menu-icons"></div>
-    <ul>
-      <li v-for="(menuItem, index) in menuItems" :key="index">
-        <a href="#!">{{ menuItem }}</a>
-      </li>
-    </ul>
+    <img :src="logoUrl" alt="terra logo">
+    <nav>
+      <a v-for="(navLink, index) in navLinks" :key="index" href="#!">{{ navLink }}</a>
+    </nav>
   </header>
 </template>
 
 <style scoped>
 header {
   display: flex;
-  padding: 1rem;
+  padding: 1.625rem 8.188rem 1.625rem 2.813rem;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
-  padding-right: 5rem;
   background-color: var(--background-color-light);
 }
 
-.menu-icons {
-  display: flex;
-  justify-content: space-between;
-  max-width: 33%;
+img {
+  max-width: 17.4rem;
 }
 
-ul {
+nav {
   display: flex;
-  list-style: none;
   gap: 1.5rem;
 }
 
-li a {
+nav a {
   font-size: var(--text-size-m);
   text-decoration: none;
   color: var(--text-color-dark);

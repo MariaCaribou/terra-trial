@@ -47,14 +47,18 @@ defineProps({
 <style scoped>
 .card {
   display: flex;
-  width: 80%;
   max-width: 75.5rem;
+  width: 100%;
   height: 27.313rem;
 }
 
 .left-side,
 .right-side {
   width: 50%;
+}
+
+.left-side {
+  background-color: var(--background-color-dark);
 }
 
 .left-side-content {
@@ -68,7 +72,7 @@ defineProps({
 
 h2 {
   font-size: var(--text-size-xl);
-  font-weight: bold;
+  font-weight: 700;
   line-height: 1.3;
 }
 
