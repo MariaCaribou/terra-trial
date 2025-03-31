@@ -1,5 +1,9 @@
 @import './base.css';
 
-#app {
-  
+#app {}
+
+h2 {
+  font-size: var(--text-size-xl);
+  font-weight: 700;
+  letter-spacing: 1px;
 }

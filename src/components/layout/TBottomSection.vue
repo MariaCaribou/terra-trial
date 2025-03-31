@@ -5,8 +5,7 @@ import TTimeline from '../ui/TTimeline.vue';
 
 <template>
   <section>
-    <h2>Lorem Ipsum Dolor Sit Amet</h2>
-    <TTimeline />
+    <TTimeline progress="33" />
     <TCard
       title="This is a card lorem ispum dolor sit"
       text="Lorem ipsum dolor sit amet consectetur. Sed pulvinar odio velit fermentum etiam consectetur pretium fringilla metus."
@@ -22,6 +21,6 @@ section {
   align-items: center;
   flex-direction: column;
   padding: 7.5rem;
-  gap: 6rem;
+  gap: 7rem;
 }
 </style>

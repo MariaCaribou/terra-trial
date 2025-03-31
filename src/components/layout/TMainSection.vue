@@ -14,7 +14,7 @@ import TPost from '../ui/TPost.vue';
     />
 
     <div class="blog">
-      <h2 class="blog-title">Lorem Ipsum Dolor Sit Amet</h2>
+      <h2>Lorem Ipsum Dolor Sit Amet</h2>
       <div class="posts">
         <TPost date="22-02-22" type="Type A" title="This is the title of the journal post." image-url="https://tf-frontend.netlify.app/images/v1/post_1.png"/>
         <TPost date="22-02-22" type="Type B" title="This is the title of the journal post." image-url="https://tf-frontend.netlify.app/images/v1/post_1.png"/>
@@ -43,12 +43,6 @@ section {
   align-items: center;
   gap: 4rem;
   width: 100%;
-}
-
-.blog-title {
-  font-size: var(--text-size-xl);
-  font-weight: 700;
-  letter-spacing: 1px;
 }
 
 .posts {

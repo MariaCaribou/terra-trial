@@ -70,12 +70,6 @@ defineProps({
   padding: 4rem;
 }
 
-h2 {
-  font-size: var(--text-size-xl);
-  font-weight: 700;
-  line-height: 1.3;
-}
-
 p {
   font-size: var(--text-size-l);
   line-height: 1.4;

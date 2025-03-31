@@ -1,16 +1,108 @@
 <script setup>
-import TPill from './TPill.vue';
-
 defineProps({
+  progress: {
+    type: Number,
+    validator: (value) => {
+      return value >= 0 && value <= 100
+    }
+  },
 })
 </script>
 
 <template>
-  <div class="timeline">
+  <div class="timeline-wrapper">
+    <h2>Lorem Ipsum Dolor Sit Amet</h2>
+    <div class="timeline-content">
+      <div class="timeline-text">
+        <span>Lorem Ipsum</span>
+        <span>Dolor Sit</span>
+      </div>
 
+      <div class="timeline-background">
+        <span class="timeline-percentage" :style="{ left: progress + '%' }">{{ progress }}%</span>
+        <div class="timeline-foreground" :style="{ width: progress + '%' }"></div>
+        <div class="timeline-marker" :style="{ left: progress + '%' }"></div>
+      </div>
+
+      <div class="timeline-numbers">
+        <span>250</span>
+        <span>750</span>
+      </div>
+    </div>
   </div>
 </template>
 
 <style scoped>
+.timeline-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9rem;
+  padding: 0 6.188rem;
+  width: 100%;
+}
 
+.timeline-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.timeline-text,
+.timeline-numbers {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.timeline-text {
+  font-size: var(--text-size-l);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.timeline-background {
+  position: relative;
+  width: 100%;
+  height: 1rem;
+  border-radius: 56.25rem;
+  background-color: var(--color-secondary);
+}
+
+.timeline-percentage {
+  position: absolute;
+  top: calc(50% - 3.5rem);
+  transform: translate(-50%, -50%);
+  color: var(--color-primary);
+  font-size: var(--text-size-xl);
+  font-weight: 500;
+}
+
+.timeline-foreground {
+  height: 100%;
+  border-radius: 56.25rem;
+  background-color: var(--color-primary);
+}
+
+.timeline-marker {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+}
+
+.timeline-numbers span:first-child {
+  font-size: var(--text-size-xl);
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+.timeline-numbers span:last-child {
+  font-size: var(--text-size-xxl);
+  font-weight: 700;
+}
 </style>
