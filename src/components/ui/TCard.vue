@@ -50,6 +50,7 @@ defineProps({
   max-width: 75.5rem;
   width: 100%;
   height: 27.313rem;
+  text-align: left;
 }
 
 .left-side,
@@ -77,5 +78,34 @@ p {
 
 .right-side {
   position: relative;
+}
+
+@media only screen and (max-width: 992px) {
+  .card {
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left-side {
+    min-height: 20rem;
+    width: 80%;
+  }
+
+  .right-side {
+    width: 80%;
+    height: 25rem;
+  }
+
+  .left-side-content {
+    height: 100%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .left-side,
+  .right-side {
+    width: 100%;
+  }
 }
 </style>

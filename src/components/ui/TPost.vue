@@ -41,6 +41,8 @@ defineProps({
   flex-direction: column;
   gap: 0.75rem;
   height: 100%;
+  width: 17.25rem;
+  text-align: left;
 }
 
 .image {
