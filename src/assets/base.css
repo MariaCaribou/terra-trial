@@ -2,6 +2,7 @@
 :root {
   --color-primary: #189B5C;         /* Shamrock green */
   --color-secondary: #0F0F0F;       /* Night */
+  --color-accent: #F78BD8;          /* Persian pink */
 
   --text-color-dark: #1A191D;       /* Raisin black */
   --text-color-light: #fff;         /* White */

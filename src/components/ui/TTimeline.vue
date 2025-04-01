@@ -38,8 +38,8 @@ defineProps({
   flex-direction: column;
   align-items: center;
   gap: 9rem;
-  padding: 0 6.188rem;
   width: 100%;
+  max-width: 62.6rem;
 }
 
 .timeline-content {

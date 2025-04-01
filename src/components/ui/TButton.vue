@@ -28,5 +28,10 @@ span {
   background-color: v-bind(backgroundColor);
   color: v-bind(labelColor);
   cursor: pointer;
+  transition: background-color 0.25s ease-in-out;
+}
+
+span:hover {
+  background-color: var(--color-accent);
 }
 </style>
