@@ -15,7 +15,7 @@
   --text-size-m: clamp(0.875rem, 1.11vw, 1rem);     /* 16px = 1.11vw for 1440px screen */
   --text-size-l: clamp(1rem, 1.25vw, 1.125rem);     /* 18px = 1.25vw for 1440px screen */
   --text-size-xl: clamp(1.75rem, 2.77vw, 2.5rem);   /* 40px = 2.77vw for 1440px screen */
-  --text-size-xxl: clamp(2rem, 4.44vw, 4rem);       /* 64px = 4.44vw for 1440px screen */
+  --text-size-xxl: clamp(3rem, 4.44vw, 4rem);       /* 64px = 4.44vw for 1440px screen */
 }
 
 *,

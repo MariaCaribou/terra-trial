@@ -74,6 +74,12 @@ nav a {
   color: var(--text-color-dark);
 }
 
+@media only screen and (max-width: 992px) {
+  header {
+    padding-right: 2.813rem;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   header {
     position: fixed;

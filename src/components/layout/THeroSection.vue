@@ -34,7 +34,7 @@ section {
   position: relative;
   justify-content: center;
   align-items: center;
-  height: 40rem;
+  height: clamp(35rem, 44vw, 40rem);
   background-color: #444f3c;
   background-repeat: no-repeat;
   background-size: cover;
@@ -46,7 +46,9 @@ section {
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-  max-width: 40%;
+  max-width: 36.5rem;
+  width: 80%;
+  text-align: center;
 }
 
 h1 {
@@ -67,11 +69,19 @@ p {
   position: absolute;
   bottom: 0;
   left: 0;
+  width: clamp(20rem, 30vw, 27.6rem);
 }
 
 .right-shape {
   position: absolute;
   top: 0;
   right: 0;
+  width: clamp(20rem, 30vw, 27.6rem);
+}
+
+@media only screen and (max-width: 600px) {
+  section {
+    padding-top: 2rem;
+  }
 }
 </style>

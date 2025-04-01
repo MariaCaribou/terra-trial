@@ -22,6 +22,7 @@ defineProps({
 
 <style scoped>
 span {
+  position: relative;
   padding: 1rem 2.5rem;
   line-height: 1.75;
   font-size: var(--text-size-m);
@@ -29,6 +30,7 @@ span {
   color: v-bind(labelColor);
   cursor: pointer;
   transition: background-color 0.25s ease-in-out;
+  z-index: 5;
 }
 
 span:hover {
