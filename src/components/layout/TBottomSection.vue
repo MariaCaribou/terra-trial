@@ -22,5 +22,12 @@ section {
   flex-direction: column;
   padding: 7.5rem;
   gap: 7rem;
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  section {
+    padding: 4rem 2rem;
+  }
 }
 </style>
