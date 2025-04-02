@@ -4,13 +4,16 @@ import TPill from './TPill.vue';
 defineProps({
   imageUrl: {
     type: String,
+  },
+  pillLabel: {
+    type: String,
   }
 })
 </script>
 
 <template>
   <div :style="{ backgroundImage: 'url(' + imageUrl + ')' }">
-    <TPill position="top-right" />
+    <TPill :label="pillLabel" position="top-right" />
   </div>
 </template>
 

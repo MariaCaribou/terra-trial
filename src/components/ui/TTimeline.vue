@@ -1,6 +1,15 @@
 <script setup>
 defineProps({
-  progress: {
+  title: {
+    type: String,
+  },
+  initialItem: {
+    type: Object,
+  },
+  finalItem: {
+    type: Object,
+  },
+  percentage: {
     type: String,
   },
 })
@@ -8,22 +17,22 @@ defineProps({
 
 <template>
   <div class="timeline-wrapper">
-    <h2>Lorem Ipsum Dolor Sit Amet</h2>
+    <h2>{{ title }}</h2>
     <div class="timeline-content">
       <div class="timeline-text">
-        <span>Lorem Ipsum</span>
-        <span>Dolor Sit</span>
+        <span>{{ initialItem?.label }}</span>
+        <span>{{ finalItem?.label }}</span>
       </div>
 
       <div class="timeline-background">
-        <span class="timeline-percentage">{{ progress }}</span>
+        <span class="timeline-percentage">{{ percentage }}</span>
         <div class="timeline-foreground"></div>
         <div class="timeline-marker"></div>
       </div>
 
       <div class="timeline-numbers">
-        <span>250</span>
-        <span>750</span>
+        <span>{{ initialItem?.data }}</span>
+        <span>{{ initialItem?.data }}</span>
       </div>
     </div>
   </div>
@@ -70,7 +79,7 @@ defineProps({
 .timeline-percentage {
   position: absolute;
   top: calc(50% - 3.5rem);
-  left: v-bind(progress);
+  left: v-bind(percentage);
   transform: translate(-50%, -50%);
   color: var(--color-primary);
   font-size: var(--text-size-xl);
@@ -79,7 +88,7 @@ defineProps({
 
 .timeline-foreground {
   height: 100%;
-  width: v-bind(progress);
+  width: v-bind(percentage);
   border-radius: 56.25rem;
   background-color: var(--color-primary);
 }
@@ -87,7 +96,7 @@ defineProps({
 .timeline-marker {
   position: absolute;
   top: 50%;
-  left: v-bind(progress);
+  left: v-bind(percentage);
   transform: translate(-50%, -50%);
   width: 2.5rem;
   height: 2.5rem;

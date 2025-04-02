@@ -1,30 +1,42 @@
 <script setup>
+import { ref, onMounted, inject } from 'vue';
 import TButton from '../ui/TButton.vue';
 
-defineProps({
-  title: {
-    type: String,
-  },
-  text: {
-    type: String,
-  },
-  imageUrl: {
-    type: String,
+const heroData = inject('heroData')
+
+// Reactive state to track if this is the first visit
+const isFirstVisit = ref(true)
+
+const checkPreviousVisits = () => {
+  const hasVisitedBefore = localStorage.getItem('hasVisitedBefore')
+  
+  if (hasVisitedBefore) {
+    isFirstVisit.value = false
+  } else {
+    localStorage.setItem('hasVisitedBefore', 'true')
+    isFirstVisit.value = true
   }
+}
+
+onMounted(() => {
+  checkPreviousVisits()
 })
 </script>
 
 <template>
-  <section :style="{ backgroundImage: 'url(' + imageUrl + ')' }">
+  <section :style="{ backgroundImage: 'url(' + heroData.bg_image + ')' }">
     <div class="hero-content">
-      <h1>{{title}}</h1>
-      <p>{{text}}</p>
+      <h1>{{isFirstVisit ? heroData?.title?.first_time_accessing : heroData?.title?.second_time_accessing}}</h1>
+      <p>{{heroData?.subtitle}}</p>
       <TButton 
-        label="Button Label"
+        :label="isFirstVisit ? heroData?.button_label?.first_time_accessing :
+        heroData?.button_label?.second_time_accessing"
+        :background-color="isFirstVisit ? '#189B5C' : '#0F0F0F'"
+        :link="heroData?.button_link"
       />
     </div>
-    <img class="left-shape" src="https://tf-frontend.netlify.app/images/v1/shapes-left.png" alt="left shape">
-    <img class="right-shape" src="https://tf-frontend.netlify.app/images/v1/shapes-right.png" alt="right shape">
+    <img class="left-shape" :src="heroData?.shapes?.shape_1" alt="left shape">
+    <img class="right-shape" :src="heroData?.shapes?.shape_2" alt="right shape">
   </section>
 </template>
 

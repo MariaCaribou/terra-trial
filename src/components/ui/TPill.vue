@@ -1,11 +1,11 @@
 <script setup>
 defineProps({
-  text: {
+  label: {
     type: String,
     required: false,
     default: 'Pill Label',
   },
-  textColor: {
+  labelColor: {
     type: String,
     required: false,
     default: '#fff',
@@ -27,7 +27,7 @@ defineProps({
 </script>
 
 <template>
-  <span :class="position">{{ text }}</span>
+  <span :class="position">{{ label }}</span>
 </template>
 
 <style scoped>
@@ -36,7 +36,7 @@ span {
   position: absolute;
   padding: 0.5rem 0.75rem;
   background-color: v-bind(backgroundColor);
-  color: v-bind(textColor);
+  color: v-bind(labelColor);
   border-radius: 1.188rem;
   font-size: var(--text-size-s);
   font-weight: 700;

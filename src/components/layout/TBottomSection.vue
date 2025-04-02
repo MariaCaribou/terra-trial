@@ -1,15 +1,25 @@
 <script setup>
+import { inject } from 'vue';
 import TCard from '../ui/TCard.vue';
 import TTimeline from '../ui/TTimeline.vue';
+
+const timelineData = inject('timelineData')
+const ctaData = inject('ctaData')
 </script>
 
 <template>
   <section class="body-section">
-    <TTimeline progress="33%" />
+    <TTimeline 
+      :title="timelineData?.title" 
+      :initial-item="timelineData?.initial_item"
+      :final-item="timelineData?.final_item"
+      :percentage="timelineData?.percentage"
+    />
     <TCard
-      title="This is a card lorem ispum dolor sit"
-      text="Lorem ipsum dolor sit amet consectetur. Sed pulvinar odio velit fermentum etiam consectetur pretium fringilla metus."
-      :image-urls="['https://www.w3schools.com/html/pic_trulli.jpg', 'https://www.w3schools.com/html/img_girl.jpg']"
+      :title="ctaData?.title"
+      :text="ctaData?.subtitle"
+      :image-urls="[ctaData?.image_1, ctaData?.image_2]"
+      :pill-label="ctaData?.pill"
     />
   </section>
 </template>

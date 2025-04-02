@@ -1,25 +1,13 @@
 <script setup>
-import { onMounted, onUnmounted, ref } from 'vue';
+import { inject, onMounted, onUnmounted, ref } from 'vue';
 import THamburgerButton from '../ui/THamburgerButton.vue';
 
-defineProps({
-  logoUrl: {
-    type: String,
-  },
-  navLinks: {
-    type: Array,
-  },
-})
+const navbarData = inject('navbarData')
 
 const isMobileMenuOpen = ref(false)
 
-function toggleMobileMenu() {
-  isMobileMenuOpen.value = !isMobileMenuOpen.value
-}
-
-function closeMobileMenu() {
-  isMobileMenuOpen.value = false
-}
+const toggleMobileMenu = () => isMobileMenuOpen.value = !isMobileMenuOpen.value
+const closeMobileMenu = () => isMobileMenuOpen.value = false
 
 onMounted(() => {
   window.addEventListener('resize', closeMobileMenu)
@@ -34,12 +22,17 @@ onUnmounted(() => {
 
 <template>
   <header>
-    <img :src="logoUrl" alt="terra logo">
+    <img :src="navbarData?.logo" alt="terra logo">
 
     <THamburgerButton @click="toggleMobileMenu" :is-open="isMobileMenuOpen" />
 
     <nav :class="{ 'open': isMobileMenuOpen }">
-      <a v-for="(navLink, index) in navLinks" :key="index" href="#!">{{ navLink }}</a>
+      <a 
+        v-if="navbarData?.menu" 
+        v-for="(navLink, index) in Object.values(navbarData?.menu)" 
+        :key="index" href="#!">
+          {{ navLink }}
+      </a>
     </nav>
   </header>
 </template>

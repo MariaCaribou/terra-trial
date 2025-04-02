@@ -4,6 +4,9 @@ import TPill from './TPill.vue';
 defineProps({
   imageUrls: {
     type: Array,
+  },
+  pillLabel: {
+    type: String,
   }
 })
 </script>
@@ -15,7 +18,7 @@ defineProps({
     <div :style="{ backgroundImage: 'url(' + imageUrls[1] + ')' }"></div>
     <div></div>
 
-    <TPill position="bottom-right" />
+    <TPill :label="pillLabel" position="bottom-right" />
   </div>
 </template>
 

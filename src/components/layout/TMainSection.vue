@@ -1,31 +1,40 @@
 <script setup>
+import { inject } from 'vue';
 import TButton from '../ui/TButton.vue';
 import TCard from '../ui/TCard.vue';
 import TPost from '../ui/TPost.vue';
+
+const introCardData = inject('introCardData')
+const blogData = inject('blogData')
 </script>
 
 <template>
   <section class="body-section">
     <TCard
-      title="This is a card lorem ispum dolor sit"
-      text="Lorem ipsum dolor sit amet consectetur. Sed pulvinar odio velit fermentum etiam consectetur pretium fringilla metus."
+      :title="introCardData?.title"
+      :text="introCardData?.subtitle"
       background-color="#fff"
-      :image-urls="['https://tf-frontend.netlify.app/images/v1/card_img.png']"
+      :image-urls="[introCardData?.image]"
+      :pill-label="introCardData?.pill"
     />
 
     <div class="blog">
-      <h2>Lorem Ipsum Dolor Sit Amet</h2>
+      <h2>{{blogData?.title}}</h2>
 
       <div class="posts-scroller">
         <div class="posts">
-          <TPost date="22-02-22" type="Type A" title="This is the title of the journal post." image-url="https://tf-frontend.netlify.app/images/v1/post_1.png"/>
-          <TPost date="22-02-22" type="Type B" title="This is the title of the journal post." image-url="https://tf-frontend.netlify.app/images/v1/post_1.png"/>
-          <TPost date="22-02-22" type="Type A" title="This is the title of the journal post." image-url="https://tf-frontend.netlify.app/images/v1/post_1.png"/>
-          <TPost date="22-02-22" type="Type A" title="This is the title of the journal post." image-url="https://tf-frontend.netlify.app/images/v1/post_1.png"/>
+          <template v-for="(post, index) in blogData?.posts" >
+            <TPost 
+              :date="post?.date" 
+              :type="post?.type" 
+              :title="post?.title" 
+              :image-url="post?.image"
+            />
+          </template>
         </div>
       </div>
 
-      <TButton label="Our Blog"/>
+      <TButton :label="blogData?.button_label" :link="blogData?.button_link"/>
     </div>
   </section>
 </template>

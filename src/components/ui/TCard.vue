@@ -16,7 +16,10 @@ defineProps({
   },
   imageUrls: {
     type: Array,
-    default: []
+    default: [],
+  },
+  pillLabel: {
+    type: String,
   }
 })
 </script>
@@ -34,11 +37,13 @@ defineProps({
       <TCardImageSingle
         v-if="imageUrls && imageUrls.length === 1"
         :image-url="imageUrls[0]"
+        :pill-label="pillLabel"
       />
 
       <TCardImageDouble
         v-if="imageUrls && imageUrls.length > 1"
         :image-urls="imageUrls"
+        :pill-label="pillLabel"
       />
     </div>
   </div>
