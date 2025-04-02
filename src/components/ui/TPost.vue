@@ -3,7 +3,7 @@ import TPill from './TPill.vue';
 
 defineProps({
   date: {
-    type: Date,
+    type: String,
   },
   type: {
     type: String,

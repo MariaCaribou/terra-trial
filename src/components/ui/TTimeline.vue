@@ -1,10 +1,7 @@
 <script setup>
 defineProps({
   progress: {
-    type: Number,
-    validator: (value) => {
-      return value >= 0 && value <= 100
-    }
+    type: String,
   },
 })
 </script>
@@ -19,9 +16,9 @@ defineProps({
       </div>
 
       <div class="timeline-background">
-        <span class="timeline-percentage" :style="{ left: progress + '%' }">{{ progress }}%</span>
-        <div class="timeline-foreground" :style="{ width: progress + '%' }"></div>
-        <div class="timeline-marker" :style="{ left: progress + '%' }"></div>
+        <span class="timeline-percentage">{{ progress }}</span>
+        <div class="timeline-foreground"></div>
+        <div class="timeline-marker"></div>
       </div>
 
       <div class="timeline-numbers">
@@ -73,6 +70,7 @@ defineProps({
 .timeline-percentage {
   position: absolute;
   top: calc(50% - 3.5rem);
+  left: v-bind(progress);
   transform: translate(-50%, -50%);
   color: var(--color-primary);
   font-size: var(--text-size-xl);
@@ -81,6 +79,7 @@ defineProps({
 
 .timeline-foreground {
   height: 100%;
+  width: v-bind(progress);
   border-radius: 56.25rem;
   background-color: var(--color-primary);
 }
@@ -88,6 +87,7 @@ defineProps({
 .timeline-marker {
   position: absolute;
   top: 50%;
+  left: v-bind(progress);
   transform: translate(-50%, -50%);
   width: 2.5rem;
   height: 2.5rem;

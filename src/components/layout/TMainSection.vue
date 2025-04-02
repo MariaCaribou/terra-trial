@@ -5,7 +5,7 @@ import TPost from '../ui/TPost.vue';
 </script>
 
 <template>
-  <section>
+  <section class="body-section">
     <TCard
       title="This is a card lorem ispum dolor sit"
       text="Lorem ipsum dolor sit amet consectetur. Sed pulvinar odio velit fermentum etiam consectetur pretium fringilla metus."
@@ -24,6 +24,7 @@ import TPost from '../ui/TPost.vue';
           <TPost date="22-02-22" type="Type A" title="This is the title of the journal post." image-url="https://tf-frontend.netlify.app/images/v1/post_1.png"/>
         </div>
       </div>
+
       <TButton label="Our Blog"/>
     </div>
   </section>
@@ -31,10 +32,6 @@ import TPost from '../ui/TPost.vue';
 
 <style scoped>
 section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   padding: 7.5rem;
   gap: 6rem;
   background-color: var(--background-color-dark);
@@ -54,7 +51,7 @@ section {
   display: block;
   width: 85%;
   max-width: 75rem;
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 
 .posts {
@@ -62,11 +59,5 @@ section {
   justify-content: space-between;
   width: 75rem;
   height: 32.5rem;
-}
-
-@media only screen and (max-width: 768px) {
-  section {
-    padding: 4rem 2rem;
-  }
 }
 </style>

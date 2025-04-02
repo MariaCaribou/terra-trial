@@ -1,5 +1,6 @@
 <script setup>
 import { onMounted, onUnmounted, ref } from 'vue';
+import THamburgerButton from '../ui/THamburgerButton.vue';
 
 defineProps({
   logoUrl: {
@@ -22,10 +23,12 @@ function closeMobileMenu() {
 
 onMounted(() => {
   window.addEventListener('resize', closeMobileMenu)
+  window.addEventListener('scroll', closeMobileMenu)
 })
 
 onUnmounted(() => {
   window.removeEventListener('resize', closeMobileMenu)
+  window.removeEventListener('scroll', closeMobileMenu)
 })
 </script>
 
@@ -33,11 +36,7 @@ onUnmounted(() => {
   <header>
     <img :src="logoUrl" alt="terra logo">
 
-    <!-- Mobile hamburger button -->
-    <div class="hamburger" @click="toggleMobileMenu" :class="{ 'open': isMobileMenuOpen }">
-      <span class="hamburger-top-bun"></span>
-      <span class="hamburger-bottom-bun"></span>
-    </div>
+    <THamburgerButton @click="toggleMobileMenu" :is-open="isMobileMenuOpen" />
 
     <nav :class="{ 'open': isMobileMenuOpen }">
       <a v-for="(navLink, index) in navLinks" :key="index" href="#!">{{ navLink }}</a>
@@ -57,10 +56,6 @@ header {
 
 img {
   max-width: 17.4rem;
-}
-
-.hamburger {
-  display: none;
 }
 
 nav {
@@ -121,51 +116,6 @@ nav a {
   nav.open {
     transform: translateY(0%);
     top: 5rem; /* This is the fixed height of the header. Could be a dynamic value, but I'm keeping it simple. */
-  }
-
-  .hamburger {
-    cursor: pointer;
-    position: relative;
-    display: block;
-    width: 3rem;
-    height: 3rem;
-    transition: all 0.25s;
-    z-index: inherit;
-  }
-
-  .hamburger-top-bun,
-  .hamburger-bottom-bun {
-    content: '';
-    display: block;
-    position: absolute;
-    left: 1rem;
-    width: 1.125rem;
-    height: 1px;
-    background: var(--text-color-dark);
-    transform: rotate(0);
-    transition: all 0.25s;
-  }
-
-  .hamburger-top-bun {
-    top: 1.4rem;
-    transform: translateY(-0.2rem);
-  }
-
-  .hamburger-bottom-bun {
-    bottom: 1.4rem;
-    transform: translateY(0.2rem);
-  }
-
-  .hamburger.open {
-    transform: rotate(90deg);
-  }
-
-  .hamburger.open .hamburger-top-bun {
-    transform: rotate(45deg) translateY(0.1rem);
-  }
-
-  .hamburger.open .hamburger-bottom-bun {
-    transform: rotate(-45deg) translateY(-0.1rem);
   }
 }
 </style>
