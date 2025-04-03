@@ -110,7 +110,7 @@ onUnmounted(() => {
 
       <div class="timeline-numbers">
         <span>{{ initialItem?.data }}</span>
-        <span>{{ initialItem?.data }}</span>
+        <span>{{ finalItem?.data }}</span>
       </div>
     </div>
   </div>

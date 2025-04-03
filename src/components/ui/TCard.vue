@@ -92,7 +92,7 @@ p {
   }
 
   .left-side {
-    min-height: 20rem;
+    min-height: 15rem;
     width: 80%;
   }
 
@@ -110,6 +110,11 @@ p {
   .left-side,
   .right-side {
     width: 100%;
+  }
+
+  .left-side-content {
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 }
 </style>
