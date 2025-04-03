@@ -1,7 +1,7 @@
 <script setup>
-import { inject } from 'vue';
-import TCard from '../ui/TCard.vue';
-import TTimeline from '../ui/TTimeline.vue';
+import { inject } from 'vue'
+import TCard from '../ui/TCard.vue'
+import TTimeline from '../ui/TTimeline.vue'
 
 const timelineData = inject('timelineData')
 const ctaData = inject('ctaData')

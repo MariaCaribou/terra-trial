@@ -26,6 +26,14 @@ const elementRef = ref(null)    // Element ref for checking visibility (timeline
 const alreadyVisible = ref(false)
 const percentageRef = ref('0%')
 
+watch(alreadyVisible, (newValue) => {
+  // When the timeline is shown in the screen (will just happen once),
+  // animate from 0 to props.percentage
+  if (newValue) {
+    animatePercentage(0, parseInt(props.percentage), props.transitionDuration)
+  }
+})
+
 // Animate using requestAnimationFrame instead of setInterval
 // for performance reasons
 const animatePercentage = (start, end, duration) => {
@@ -53,14 +61,6 @@ const animatePercentage = (start, end, duration) => {
   
   requestAnimationFrame(updatePercentage)
 }
-
-watch(alreadyVisible, (newValue) => {
-  // When the timeline is shown in the screen (will just happen once),
-  // animate from 0 to props.percentage
-  if (newValue) {
-    animatePercentage(0, parseInt(props.percentage), props.transitionDuration)
-  }
-})
 
 // From https://www.javascripttutorial.net/dom/css/check-if-an-element-is-visible-in-the-viewport/
 const isInViewport = (element) => {

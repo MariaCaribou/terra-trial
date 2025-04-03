@@ -1,8 +1,8 @@
 <script setup>
-import { inject } from 'vue';
-import TButton from '../ui/TButton.vue';
-import TCard from '../ui/TCard.vue';
-import TPost from '../ui/TPost.vue';
+import { inject } from 'vue'
+import TButton from '../ui/TButton.vue'
+import TCard from '../ui/TCard.vue'
+import TPost from '../ui/TPost.vue'
 
 const introCardData = inject('introCardData')
 const blogData = inject('blogData')
@@ -23,11 +23,11 @@ const blogData = inject('blogData')
 
       <div class="posts-scroller">
         <div class="posts">
-          <template v-for="(post, index) in blogData?.posts" >
-            <TPost 
-              :date="post?.date" 
-              :type="post?.type" 
-              :title="post?.title" 
+          <template v-for="post in blogData?.posts">
+            <TPost
+              :date="post?.date"
+              :type="post?.type"
+              :title="post?.title"
               :image-url="post?.image"
             />
           </template>

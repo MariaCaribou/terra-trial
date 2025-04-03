@@ -5,7 +5,7 @@ defineProps({
     default: false
   },
 })
-</script>``
+</script>
 
 <template>
   <div class="hamburger" :class="{ 'open': isOpen }">

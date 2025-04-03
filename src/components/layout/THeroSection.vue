@@ -1,11 +1,11 @@
 <script setup>
-import { ref, onMounted, inject } from 'vue';
-import TButton from '../ui/TButton.vue';
-
-const heroData = inject('heroData')
+import { ref, onMounted, inject } from 'vue'
+import TButton from '../ui/TButton.vue'
 
 // Reactive state to track if this is the first visit
 const isFirstVisit = ref(true)
+
+const heroData = inject('heroData')
 
 const checkPreviousVisits = () => {
   const hasVisitedBefore = localStorage.getItem('hasVisitedBefore')
@@ -24,7 +24,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <section :style="{ backgroundImage: 'url(' + heroData?.bg_image + ')' }">
+  <section class="background-cover-center" :style="{ backgroundImage: 'url(' + heroData?.bg_image + ')' }">
     <div class="hero-content">
       <h1>{{isFirstVisit ? heroData?.title?.first_time_accessing : heroData?.title?.second_time_accessing}}</h1>
       <p>{{heroData?.subtitle}}</p>
@@ -48,9 +48,6 @@ section {
   align-items: center;
   height: clamp(35rem, 44vw, 40rem);
   background-color: #444f3c;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
 }
 
 .hero-content {
@@ -71,7 +68,6 @@ h1 {
 }
 
 p {
-  font-size: var(--text-size-l);
   text-align: center;
   color: var(--text-color-light);
   letter-spacing: 0.2px;

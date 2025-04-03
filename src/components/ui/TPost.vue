@@ -1,5 +1,5 @@
 <script setup>
-import TPill from './TPill.vue';
+import TPill from './TPill.vue'
 
 defineProps({
   date: {
@@ -22,7 +22,7 @@ defineProps({
 
 <template>
   <div class="post">
-    <div class="image" :style="{ backgroundImage: 'url(' + imageUrl + ')' }">
+    <div class="image background-cover-center" :style="{ backgroundImage: 'url(' + imageUrl + ')' }">
       <TPill 
         text="Type Pill" 
         :background-color="type === 'Type B' ? '#F78BD8' : undefined"
@@ -49,9 +49,6 @@ defineProps({
   display: block;
   position: relative;
   height: 70%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
 }
 
 .date {
@@ -60,7 +57,6 @@ defineProps({
 }
 
 p {
-  font-size: var(--text-size-l);
   line-height: 1.3;
 }
 </style>

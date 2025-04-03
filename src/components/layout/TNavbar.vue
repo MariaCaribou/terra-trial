@@ -1,10 +1,10 @@
 <script setup>
-import { inject, onMounted, onUnmounted, ref } from 'vue';
-import THamburgerButton from '../ui/THamburgerButton.vue';
-
-const navbarData = inject('navbarData')
+import { inject, onMounted, onUnmounted, ref } from 'vue'
+import THamburgerButton from '../ui/THamburgerButton.vue'
 
 const isMobileMenuOpen = ref(false)
+
+const navbarData = inject('navbarData')
 
 const toggleMobileMenu = () => isMobileMenuOpen.value = !isMobileMenuOpen.value
 const closeMobileMenu = () => isMobileMenuOpen.value = false
@@ -30,7 +30,8 @@ onUnmounted(() => {
       <a 
         v-if="navbarData?.menu" 
         v-for="(navLink, index) in Object.values(navbarData?.menu)" 
-        :key="index" href="#!">
+        :key="index"
+        href="#!">
           {{ navLink }}
       </a>
     </nav>

@@ -16,7 +16,7 @@ defineProps({
   link: {
     type: String,
     required: false,
-  }
+  },
 })
 </script>
 

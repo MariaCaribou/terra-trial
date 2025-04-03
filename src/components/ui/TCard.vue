@@ -1,6 +1,6 @@
 <script setup>
-import TCardImageDouble from './TCardImageDouble.vue';
-import TCardImageSingle from './TCardImageSingle.vue';
+import TCardImageDouble from './TCardImageDouble.vue'
+import TCardImageSingle from './TCardImageSingle.vue'
 
 defineProps({
   title: {
@@ -20,7 +20,7 @@ defineProps({
   },
   pillLabel: {
     type: String,
-  }
+  },
 })
 </script>
 
@@ -77,7 +77,6 @@ defineProps({
 }
 
 p {
-  font-size: var(--text-size-l);
   line-height: 1.4;
 }
 

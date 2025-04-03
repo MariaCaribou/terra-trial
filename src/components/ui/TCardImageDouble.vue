@@ -1,5 +1,5 @@
 <script setup>
-import TPill from './TPill.vue';
+import TPill from './TPill.vue'
 
 defineProps({
   imageUrls: {
@@ -7,12 +7,12 @@ defineProps({
   },
   pillLabel: {
     type: String,
-  }
+  },
 })
 </script>
 
 <template>
-  <div class="images-wrapper">
+  <div class="images-wrapper background-cover-center">
     <div></div>
     <div :style="{ backgroundImage: 'url(' + imageUrls[0] + ')' }"></div>
     <div :style="{ backgroundImage: 'url(' + imageUrls[1] + ')' }"></div>
@@ -34,8 +34,5 @@ defineProps({
   width: 50%;
   height: 50%;
   background-color: var(--background-color-dark);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
 }
 </style>
