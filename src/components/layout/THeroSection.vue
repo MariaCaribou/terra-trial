@@ -24,7 +24,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <section :style="{ backgroundImage: 'url(' + heroData.bg_image + ')' }">
+  <section :style="{ backgroundImage: 'url(' + heroData?.bg_image + ')' }">
     <div class="hero-content">
       <h1>{{isFirstVisit ? heroData?.title?.first_time_accessing : heroData?.title?.second_time_accessing}}</h1>
       <p>{{heroData?.subtitle}}</p>
