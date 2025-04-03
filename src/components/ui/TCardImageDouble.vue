@@ -12,10 +12,10 @@ defineProps({
 </script>
 
 <template>
-  <div class="images-wrapper background-cover-center">
+  <div class="images-wrapper">
     <div></div>
-    <div :style="{ backgroundImage: 'url(' + imageUrls[0] + ')' }"></div>
-    <div :style="{ backgroundImage: 'url(' + imageUrls[1] + ')' }"></div>
+    <div class="background-cover-center" :style="{ backgroundImage: 'url(' + imageUrls[0] + ')' }"></div>
+    <div class="background-cover-center" :style="{ backgroundImage: 'url(' + imageUrls[1] + ')' }"></div>
     <div></div>
 
     <TPill :label="pillLabel" position="bottom-right" />

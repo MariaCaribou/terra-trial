@@ -67,7 +67,7 @@ watch(() => props.isLoading, (newValue) => {
 img {
   opacity: v-bind(opacity);
   transition: opacity ease-in-out;
-  width: 85%;
+  width: 50%;
   max-width: 18.75rem;
 }
 </style>
