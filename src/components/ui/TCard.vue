@@ -28,8 +28,8 @@ defineProps({
   <div class="card">
     <div class="left-side">
       <div class="left-side-content">
-        <h2>{{title}}</h2>
-        <p>{{text}}</p>
+        <h2>{{ title }}</h2>
+        <p>{{ text }}</p>
       </div>
     </div>
     

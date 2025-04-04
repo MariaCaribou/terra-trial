@@ -1,5 +1,5 @@
 <script setup>
-import { defineProps, ref, watch } from 'vue'
+import { ref, watch } from 'vue'
 
 // Store props in a variable for being able to watch it
 const props = defineProps({
@@ -42,7 +42,7 @@ watch(() => props.isLoading, (newValue) => {
   <div class="loading-screen" :style="{ transitionDuration: props.transitionDuration + 'ms' }">
     <img
       :style="{ transitionDuration: props.transitionDuration + 'ms' }"
-      src="https://terrahq.com/preloader/preloader.gif"
+      src="/preloader.gif"
       alt="preloader media"
     >
   </div>

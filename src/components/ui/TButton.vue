@@ -21,7 +21,7 @@ defineProps({
 </script>
 
 <template>
-  <a :href="link">{{label}}</a>
+  <a :href="link">{{ label }}</a>
 </template>
 
 <style scoped>

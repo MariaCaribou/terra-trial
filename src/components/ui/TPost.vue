@@ -29,9 +29,9 @@ defineProps({
       />
     </div>
     
-    <span class="date">{{date}}</span>
+    <span class="date">{{ date }}</span>
 
-    <p>{{title}}</p>
+    <p>{{ title }}</p>
   </div>
 </template>
 

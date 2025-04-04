@@ -19,7 +19,7 @@ const blogData = inject('blogData')
     />
 
     <div class="blog">
-      <h2>{{blogData?.title}}</h2>
+      <h2>{{ blogData?.title }}</h2>
 
       <div class="posts-scroller">
         <div class="posts">

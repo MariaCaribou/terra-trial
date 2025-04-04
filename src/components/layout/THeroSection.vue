@@ -26,8 +26,8 @@ onMounted(() => {
 <template>
   <section class="background-cover-center" :style="{ backgroundImage: 'url(' + heroData?.bg_image + ')' }">
     <div class="hero-content">
-      <h1>{{isFirstVisit ? heroData?.title?.first_time_accessing : heroData?.title?.second_time_accessing}}</h1>
-      <p>{{heroData?.subtitle}}</p>
+      <h1>{{ isFirstVisit ? heroData?.title?.first_time_accessing : heroData?.title?.second_time_accessing }}</h1>
+      <p>{{ heroData?.subtitle }}</p>
       <TButton 
         :label="isFirstVisit ? heroData?.button_label?.first_time_accessing :
         heroData?.button_label?.second_time_accessing"

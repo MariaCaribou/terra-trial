@@ -24,7 +24,7 @@ const props = defineProps({
 
 const elementRef = ref(null)    // Element ref for checking visibility (timeline-wrapper div)
 const alreadyVisible = ref(false)
-const percentageRef = ref('0%')
+const animatedPercentage = ref('0%')
 
 watch(alreadyVisible, (newValue) => {
   // When the timeline is shown in the screen (will just happen once),
@@ -53,7 +53,7 @@ const animatePercentage = (start, end, duration) => {
     const newValue = Math.floor(easedProgress * (end - start) + start) // Convert from range [0, 1] to range [start, end]
 
     // Update just percentageRef, since it's the only value used by the UI
-    percentageRef.value = newValue + '%'
+    animatedPercentage.value = newValue + '%'
 
     // Keep animating if haven't the end value
     if (newValue < end) requestAnimationFrame(updatePercentage)
@@ -103,7 +103,7 @@ onUnmounted(() => {
       </div>
 
       <div class="timeline-background">
-        <span class="timeline-percentage">{{ percentageRef }}</span>
+        <span class="timeline-percentage">{{ animatedPercentage }}</span>
         <div class="timeline-foreground"></div>
         <div class="timeline-marker"></div>
       </div>
@@ -157,7 +157,7 @@ onUnmounted(() => {
 .timeline-percentage {
   position: absolute;
   top: calc(50% - 3.5rem);
-  left: v-bind(percentageRef);
+  left: v-bind(animatedPercentage);
   transform: translate(-50%, -50%);
   color: var(--color-primary);
   font-size: var(--text-size-xl);
@@ -166,7 +166,7 @@ onUnmounted(() => {
 
 .timeline-foreground {
   height: 100%;
-  width: v-bind(percentageRef);
+  width: v-bind(animatedPercentage);
   border-radius: 56.25rem;
   background-color: var(--color-primary);
 }
@@ -174,7 +174,7 @@ onUnmounted(() => {
 .timeline-marker {
   position: absolute;
   top: 50%;
-  left: v-bind(percentageRef);
+  left: v-bind(animatedPercentage);
   transform: translate(-50%, -50%);
   width: 2.5rem;
   height: 2.5rem;
